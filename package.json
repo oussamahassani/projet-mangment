@@ -1,0 +1,35 @@
+{
+  "name": "Extract Mongo database ",
+  "version": "0.1.11",
+  "description": "Extract Mongo database ",
+  "main": "extract-mongo-schema.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "keywords": [
+    "mongodb",
+    "mongo",
+    "schema",
+    "data model",
+    "foreign keys",
+    "erm",
+    "er diagram"
+  ],
+ 
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "command-line-args": "^3.0.5",
+    "fs": "0.0.1-security",
+    "mongodb": "^3.5.8",
+    "path": "^0.12.7",
+    "xlsx": "^0.17.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}

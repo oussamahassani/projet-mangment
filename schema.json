@@ -1,0 +1,442 @@
+{
+	"QuizSMSReporting": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"date_created": {
+			"type": "Date",
+			"required": true
+		},
+		"date_crt": {
+			"type": "string",
+			"required": true
+		},
+		"customerMobile": {
+			"type": "string",
+			"required": true
+		},
+		"message": {
+			"type": "string",
+			"required": true
+		}
+	},
+	"messages": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"date_created": {
+			"type": "Date",
+			"required": true
+		},
+		"date_updated": {
+			"type": "undefined",
+			"required": false
+		},
+		"disabled": {
+			"type": "Array",
+			"required": true
+		},
+		"statusTo": {
+			"type": "boolean",
+			"required": true
+		},
+		"discussionID": {
+			"foreignKey": true,
+			"references": "discussion",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"to": {
+			"type": "string",
+			"required": true
+		},
+		"from": {
+			"type": "string",
+			"required": true
+		},
+		"body": {
+			"type": "string",
+			"required": true
+		},
+		"type": {
+			"type": "string",
+			"required": true
+		}
+	},
+	"QuizBillingsreportings": {},
+	"customerGroups": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"date_created": {
+			"type": "Date",
+			"required": true
+		},
+		"name": {
+			"key": true,
+			"type": "string",
+			"required": true
+		},
+		"nameAR": {
+			"type": "string",
+			"required": true
+		},
+		"description": {
+			"type": "string",
+			"required": true
+		}
+	},
+	"tokens": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"name": {
+			"type": "string",
+			"required": true
+		},
+		"date_created": {
+			"type": "Date",
+			"required": true
+		},
+		"date_updated": {
+			"type": "undefined",
+			"required": false
+		},
+		"email": {
+			"type": "string",
+			"required": true
+		},
+		"expiration": {
+			"type": "number",
+			"required": true
+		},
+		"is_revoked": {
+			"type": "boolean",
+			"required": true
+		},
+		"password": {
+			"type": "string",
+			"required": true
+		},
+		"scopes": {
+			"type": "Array",
+			"required": true
+		}
+	},
+	"smsTemplates": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"name": {
+			"type": "string",
+			"required": true
+		},
+		"forfait_id": {
+			"foreignKey": true,
+			"references": "customerGroups",
+			"key": true,
+			"type": "Object",
+			"required": false
+		},
+		"bodyFR": {
+			"type": "string",
+			"required": true
+		},
+		"bodyAR": {
+			"type": "string",
+			"required": true
+		}
+	},
+	"QuizBillingSuccess": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"date_created": {
+			"type": "Date",
+			"required": true
+		},
+		"mobile": {
+			"type": "string",
+			"required": true
+		},
+		"date_debut_forfait": {
+			"type": "string",
+			"required": true
+		},
+		"desinscription": {
+			"type": "boolean",
+			"required": true
+		}
+	},
+	"QuizSMSHistory": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"date_created": {
+			"type": "Date",
+			"required": true
+		},
+		"date_crt": {
+			"type": "string",
+			"required": true
+		},
+		"number": {
+			"type": "string",
+			"required": true
+		},
+		"message": {
+			"type": "string",
+			"required": true
+		}
+	},
+	"discussion": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"date_created": {
+			"type": "Date",
+			"required": true
+		},
+		"date_updated": {
+			"type": "Date",
+			"required": true
+		},
+		"disabled": {
+			"type": "Array",
+			"required": true
+		},
+		"status": {
+			"type": "Object",
+			"structure": {
+				"mobile": {
+					"type": "string",
+					"required": true
+				},
+				"nbmsg": {
+					"type": "number",
+					"required": true
+				}
+			},
+			"required": true
+		},
+		"recipients": {
+			"type": "Array",
+			"required": true
+		},
+		"lastMessage": {
+			"type": "string",
+			"required": true
+		}
+	},
+	"customers": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"date_created": {
+			"type": "Date",
+			"required": true
+		},
+		"date_updated": {
+			"type": "undefined",
+			"required": false
+		},
+		"sms_count": {
+			"type": "number",
+			"required": true
+		},
+		"gender": {
+			"type": "string",
+			"required": true
+		},
+		"birthdate": {
+			"type": "undefined",
+			"required": false
+		},
+		"status": {
+			"type": "boolean",
+			"required": true
+		},
+		"notif_success": {
+			"type": "number",
+			"required": true
+		},
+		"image": {
+			"type": "string",
+			"required": true
+		},
+		"email": {
+			"type": "string",
+			"required": true
+		},
+		"send_sms": {
+			"type": "boolean",
+			"required": true
+		},
+		"category_ids": {
+			"type": "Array",
+			"required": true
+		},
+		"billing": {
+			"type": "boolean",
+			"required": true
+		},
+		"prem_ins": {
+			"type": "boolean",
+			"required": true
+		},
+		"FJ": {
+			"type": "boolean",
+			"required": true
+		},
+		"FH": {
+			"type": "boolean",
+			"required": true
+		},
+		"FM": {
+			"type": "boolean",
+			"required": true
+		},
+		"date_fin_forfait": {
+			"type": "undefined",
+			"required": false
+		},
+		"date_debut_forfait": {
+			"type": "undefined",
+			"required": false
+		},
+		"socketId": {
+			"type": "string",
+			"required": true
+		},
+		"online": {
+			"type": "string",
+			"required": true
+		},
+		"mobile": {
+			"type": "string",
+			"required": true
+		},
+		"full_name": {
+			"type": "string",
+			"required": true
+		},
+		"address": {
+			"type": "string",
+			"required": true
+		},
+		"forfait_id": {
+			"foreignKey": true,
+			"references": "customerGroups",
+			"key": true,
+			"type": "Object",
+			"required": true
+		},
+		"last_forfait_id": {
+			"key": true,
+			"type": "Object",
+			"required": true
+		}
+	},
+	"QuizCustomers": {
+		"_id": {
+			"primaryKey": true,
+			"type": "Object",
+			"required": true
+		},
+		"date_created": {
+			"type": "Date",
+			"required": true
+		},
+		"date_updated": {
+			"type": "Date",
+			"required": false
+		},
+		"status": {
+			"type": "boolean",
+			"required": true
+		},
+		"billing": {
+			"type": "boolean",
+			"required": true
+		},
+		"date_debut_forfait": {
+			"type": "string",
+			"required": false
+		},
+		"date_desinscription": {
+			"type": "undefined",
+			"required": false
+		},
+		"date_desins": {
+			"type": "undefined",
+			"required": false
+		},
+		"notif_success": {
+			"type": "number",
+			"required": true
+		},
+		"pointsTotal": {
+			"type": "number",
+			"required": true
+		},
+		"prem_ins": {
+			"type": "boolean",
+			"required": true
+		},
+		"lang_app": {
+			"type": "string",
+			"required": true
+		},
+		"socketIds": {
+			"type": "Array",
+			"required": true
+		},
+		"online": {
+			"type": "string",
+			"required": true
+		},
+		"fauseQuestion": {
+			"type": "number",
+			"required": true
+		},
+		"pointsActuel": {
+			"type": "number",
+			"required": true
+		},
+		"idQuiz": {
+			"type": "string",
+			"required": true
+		},
+		"mode_ins": {
+			"type": "string",
+			"required": true
+		},
+		"mobile": {
+			"type": "string",
+			"required": true
+		},
+		"id_GA": {
+			"type": "string",
+			"required": true
+		}
+	}
+}
